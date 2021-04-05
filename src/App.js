@@ -12,38 +12,23 @@ function App() {
   );
 }
 
-// COUNTER1 :: ACCESS / UPDATE
-// SHOPPING PAGE :: LISTING ALL THE PRODUCTS :: ADD TO CART
 function Component1() {
-  // LOGIC
-  const [balance, setBalance] = useState(10000);
-  const deposit = () => {
-    setBalance(balance + 5000);
-  };
+  const [balance] = useState(10000);
 
   // UI
-  return (
-    <div>
-      I AM Component1 {balance}
-      <button onClick={deposit}>DEPOSIT</button>
-      <button onClick={deposit}>ADD TO CART</button>
-    </div>
-  );
+  return <div>I AM Component1 {balance}</div>;
 }
 
-// // COUNTER2 :: ACCESS / UPDATE
-// CART PAGE
 function Component2() {
   const [balance] = useState(10000);
 
   return <div>I am Component2 {balance}</div>;
 }
 
-// // COUNTER3 :: ACCESS / UPDATE
 function Component3() {
   const [balance] = useState(10000);
 
-  return <div>I am Component3</div>;
+  return <div>I am Component3 {balance}</div>;
 }
 
 export default App;
