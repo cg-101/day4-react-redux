@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
   return (
@@ -13,22 +14,22 @@ function App() {
 }
 
 function Component1() {
-  const [balance] = useState(10000);
+  const state = useSelector((state) => state);
 
   // UI
-  return <div>I AM Component1 {balance}</div>;
+  return <div>I AM Component1 {state.balance}</div>;
 }
 
 function Component2() {
-  const [balance] = useState(10000);
+  const state = useSelector((state) => state);
 
-  return <div>I am Component2 {balance}</div>;
+  return <div>I am Component2 {state.balance}</div>;
 }
 
 function Component3() {
-  const [balance] = useState(10000);
+  const state = useSelector((state) => state);
 
-  return <div>I am Component3 {balance}</div>;
+  return <div>I am Component3 {state.balance}</div>;
 }
 
 export default App;
