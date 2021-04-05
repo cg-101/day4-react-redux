@@ -14,13 +14,18 @@ function App() {
 }
 
 function Component1() {
-  const state = useSelector((state) => state);
+  // useSelector :: mapStateToProps
+  const balance = useSelector((state) => state.balance);
+  const username = useSelector((state) => state.username);
+  const cart = useSelector((state) => state.cart);
+
+  // useDispatch :: mapDispatchToProps :: dispatching action
   const dispatch = useDispatch();
 
   // UI
   return (
     <div>
-      I AM Component1 {state.balance}
+      I AM Component1 {balance} of user {username}
       <button onClick={() => dispatch({ type: "DEPOSIT" })}>
         DEPOSIT
       </button>

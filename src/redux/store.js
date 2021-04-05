@@ -2,7 +2,9 @@ import { createStore } from "redux";
 
 // Common REUSABLE STATE
 const initialState = {
+  username: "Mr. React",
   balance: 100,
+  cart: [],
 };
 
 // LOGIC WE WRITE HERE :: {type: 'DEPOSIT'}
