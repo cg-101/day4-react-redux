@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   return (
@@ -15,15 +15,31 @@ function App() {
 
 function Component1() {
   const state = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   // UI
-  return <div>I AM Component1 {state.balance}</div>;
+  return (
+    <div>
+      I AM Component1 {state.balance}
+      <button onClick={() => dispatch({ type: "DEPOSIT" })}>
+        DEPOSIT
+      </button>
+    </div>
+  );
 }
 
 function Component2() {
   const state = useSelector((state) => state);
+  const dispatch = useDispatch();
 
-  return <div>I am Component2 {state.balance}</div>;
+  return (
+    <div>
+      I am Component2 {state.balance}
+      <button onClick={() => dispatch({ type: "WITHDRAW" })}>
+        Withdraw
+      </button>
+    </div>
+  );
 }
 
 function Component3() {

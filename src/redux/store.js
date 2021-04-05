@@ -5,10 +5,18 @@ const initialState = {
   balance: 100,
 };
 
-// LOGIC WE WRITE HERE
+// LOGIC WE WRITE HERE :: {type: 'DEPOSIT'}
 function reducer1(state = initialState, action) {
-  // TODO
-  return state;
+  //  LOGIC
+  switch (action.type) {
+    // COMMON LOGIC
+    case "DEPOSIT":
+      return { ...state, balance: state.balance + 100 };
+    case "WITHDRAW":
+      return { ...state, balance: state.balance - 100 };
+    default:
+      return state;
+  }
 }
 
 export const store = createStore(reducer1);
